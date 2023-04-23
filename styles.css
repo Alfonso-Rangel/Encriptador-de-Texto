@@ -1,0 +1,178 @@
+body {
+    background-color: #D8DFE8;
+}
+
+header {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+}
+
+/* ----- ----- ----- CAMPO DE TEXTO ----- ----- ----- */
+.seccion-texto {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    height: 60%;
+    width: 42%;
+    overflow: hidden;
+}
+
+.texto-area {
+    position: absolute;
+    top: 5%;
+    height: 95%;
+    width: 100%;
+    resize: none;
+    border: 0;
+    outline: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #0A3871;
+    padding: 5% 0;
+    background: transparent;
+}
+
+.texto-area::placeholder {
+    color: transparent;
+}
+
+.texto-area:placeholder-shown ~ .texto-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    cursor: text;
+    top: 10%;
+}
+
+.texto-label {
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    top: 5.7%;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #0A3871;
+}
+
+.texto-area:focus ~ .texto-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    font-family: 'Inter', sans-serif;
+    transition: 0.1s;
+    font-size: 1rem;
+    color: #0A3871;
+    margin-top: 4%;
+}
+
+.texto-area:required,
+.texto-area:invalid {
+    box-shadow: none;
+}
+
+/* ----- ----- ----- BOTONES ----- ----- ----- */
+.seccion-botones {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    height: 9%;
+    width: 42%;
+}
+
+.seccion-botones button {
+    height: 100%;
+    width: 47%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    border-color: #0A3871;
+    cursor: pointer;
+    /*
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+
+    cursor: pointer;
+    display: inline-flex;
+
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 32px;
+    padding-right: 32px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+     */
+}
+
+
+.seccion-botones button:focus {
+    box-shadow: #0A3871 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #0A3871 0 -3px 0 inset;
+}
+
+.seccion-botones button:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #0A3871 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.seccion-botones button:active {
+    box-shadow: #0A3871 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.desencriptar {
+    background-color: white;
+    color: #0A3871;
+}
+
+.encriptar {
+    margin-right: 5%;
+    background-color: #0A3871;
+    color: white;
+}
+
+/* ----- ----- ----- COPIAR TEXTO ----- ----- -----*/
+.seccion-copiar {
+    position: absolute;
+    text-align: center;
+    top: 5%;
+    left: 68%;
+    height: 85%;
+    width: 25%;
+    background-color: white;
+    border-radius: 2rem;
+}
+
+.seccion-copiar img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.seccion-copiar h1, p {
+    position: relative;
+    top: -10%;
+    font-family: 'Inter', sans-serif;
+}
+
+.seccion-copiar h1 {
+    font-size: 1.5em;
+}
+
+.seccion-copiar p {
+    font-size: 1em;
+}
+
