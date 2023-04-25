@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>Encriptador de texto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,23 +10,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="assets/Logo.png" alt="Logo de Alura">
-    </header>
-
+    <script src="script.js"></script>
+    <img class="logo" src="assets/Logo.jpg" alt="Logo de Alura">
     <section class="seccion-texto">
         <textarea class="texto-area" placeholder="Ingrese el texto" name="texto" id='texto' required></textarea>
         <label for="texto" class="texto-label">Ingrese el texto aquí</label>
     </section>
 
     <section class="seccion-botones">
-        <button class="encriptar" type="button">Encriptar</button>
+        <button class="encriptar" type="button" onclick="textsize(document.getElementById('texto').value)">Encriptar</button>
         <button class="desencriptar" type="button">Desencriptar</button>
     </section>
+
     <section class="seccion-copiar">
         <img src="assets/Muñeco.png" alt="Muñeco buscando contenido">
-        <h1>Ningún mensaje fue encontrado</h1>
-        <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        <div class="mensaje-copiar">
+            <h1>Ningún mensaje fue encontrado</h1>
+            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        </div>
     </section>
 </body>
 </html>
