@@ -1,18 +1,3 @@
-/*
-.logo {
-    background-color: brown;
-}
-.seccion-botones {
-    background-color: mediumorchid;
-}
-.seccion-texto {
-    background-color: lightcoral;
-}
-.seccion-copiar {
-    background-color: greenyellow;
-}
-*/
-
 body {
     background-color: #F3F5FC;
 }
@@ -85,12 +70,15 @@ body {
     margin-top: 4%;
 }
 
-.texto-area:required,
-.texto-area:invalid {
-    box-shadow: none;
-}
-
 /* ----- ----- ----- BOTONES ----- ----- ----- */
+#advertencia {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #495057;
+    position: absolute;
+    top: 81%;
+    left: 16.67%;
+}
 .seccion-botones {
     position: absolute;
     top: 86.43%;
@@ -103,7 +91,7 @@ body {
     align-items: center;
 }
 
-.seccion-botones button {
+.boton {
     position: absolute;
     height: 100%;
     width: 48%;
@@ -119,23 +107,23 @@ body {
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
 }
 
-.seccion-botones button:hover {
+.boton:hover {
     color: #D8DFE8;
     background-color: #0A3871;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
 
-.seccion-botones button:active {
+.boton:active {
     box-shadow: none;
     transform: translateY(0);
 }
 
-.encriptar {
+#encriptar {
     left: 0;
 }
 
-.desencriptar {
+#desencriptar {
     right: 0;
 }
 
@@ -151,6 +139,32 @@ body {
     border-radius: 2rem;
 }
 
+#output-copiar {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 67%;
+    width: 90%;
+    resize: none;
+    border: 0;
+    outline: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #0A3871;
+    text-align: justify;
+    background: transparent;
+    display: none;
+}
+
+#boton-copiar {
+    display: none;
+    position: absolute;
+    bottom: 4%;
+    left: 5%;
+    height: 8%;
+    width: 90%;
+}
+
 .seccion-copiar img {
     position: absolute;
     top: 12%;
@@ -158,18 +172,36 @@ body {
     width: 90%;
 }
 
-.mensaje-copiar {
+#mensaje-copiar {
     position: absolute;
     color: #343A40;
     font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     top: 65%;
     left: 5%;
+    height: 25%;
     width: 90%;
 }
-.mensaje-copiar p {
-    font-size: 0.9rem;
+
+#mensaje-copiar h1 {
+    position: absolute;
+    font-size: 1.4rem;
+    top: 0;
+    left: 5%;
+    height: 40%;
+    width: 90%;
 }
+
+#mensaje-copiar p {
+    position: absolute;
+    font-size: 1rem;
+    top: 45%;
+    left: 5%;
+    height: 40%;
+    width: 90%;
+    bottom: 0;
+}
+
 
 @media screen and (width <= 768px) {
     .logo {
@@ -205,29 +237,25 @@ body {
         font-size: 1.8rem;
     }
 
+    #advertencia {
+        font-size: 0.8rem;
+        top: 70%;
+        left: 5.21%;
+    }
+
     .seccion-botones {
+        top: 74.11%;
+        left: 5.21%;
         height: 5.71%;
         width: 89.58%;
-        position: absolute; /* Añade posición relativa a la sección */
     }
 
-    .seccion-botones button {
+    .boton {
         font-size: 1.2rem;
         border-radius: 1.5rem;
-        position: absolute; /* Añade posición absoluta a los botones */
-        height: 45%;
-        width: 100%; /* Añade ancho del 100% */
+        height: 100%;
+        width: 45%;
     }
-
-    .encriptar {
-        top: 0;
-    }
-
-    .desencriptar {
-        bottom: 0;
-    }
-
-
 
     .seccion-copiar {
         top: 85.26%;
@@ -236,17 +264,29 @@ body {
         width: 89.58%;
     }
 
+    #output-copiar {
+        height: 55%;
+    }
+
+    #boton-copiar {
+        left: 35%;
+        height: 30%;
+        width: 30%;
+    }
+
     .seccion-copiar img {
         display: none;
     }
 
-    .mensaje-copiar {
-        top: 10%;
-    }
-
-    .mensaje-copiar h1 {
-        font-size: 1.4rem;
-        font-weight: bolder;
+    #mensaje-copiar {
+        top: 5%;
+        left: 5%;
+        height: 90%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -277,11 +317,15 @@ body {
     .texto-area:focus ~ .texto-label {
         top: 0;
         font-size: 1.4rem;
-        margin-top: 4%;
+        margin-top: 1%;
     }
 
     .texto-area:placeholder-shown ~ .texto-label {
         font-size: 1.8rem;
+    }
+
+    #advertencia {
+        top: 47%;
     }
 
     .seccion-botones {
@@ -290,9 +334,19 @@ body {
         height: 16.93%;
         width: 91.47%;
     }
-    .seccion-botones button {
+    .boton {
         font-size: 1.2rem;
         border-radius: 1.5rem;
+        height: 45%;
+        width: 100%;
+    }
+
+    #encriptar {
+        top: 0;
+    }
+
+    #desencriptar {
+        bottom: 0;
     }
 
     .seccion-copiar {
@@ -302,16 +356,21 @@ body {
         width: 89.58%;
     }
 
+    #output-copiar {
+        height: 65%;
+    }
+
+    #boton-copiar {
+        height: 20%;
+    }
+     #mensaje-copiar {
+         top: 10%;
+         left: 5%;
+         height: 80%;
+         width: 90%;
+     }
+
     .seccion-copiar img {
         display: none;
-    }
-
-    .mensaje-copiar {
-        top: 10%;
-    }
-
-    .mensaje-copiar h1 {
-        font-size: 1.4rem;
-        font-weight: bolder;
     }
 }

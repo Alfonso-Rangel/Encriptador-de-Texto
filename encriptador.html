@@ -7,8 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <script src="script.js"></script>
     <img class="logo" src="assets/Logo.jpg" alt="Logo de Alura">
@@ -16,18 +18,25 @@
         <textarea class="texto-area" placeholder="Ingrese el texto" name="texto" id='texto' required></textarea>
         <label for="texto" class="texto-label">Ingrese el texto aquí</label>
     </section>
-
+    <p id="advertencia">&#x2755Solo letras minúsculas y sin acentos</p>
     <section class="seccion-botones">
-        <button class="encriptar" type="button" onclick="textsize(document.getElementById('texto').value)">Encriptar</button>
-        <button class="desencriptar" type="button">Desencriptar</button>
+        <button class="boton" id= "encriptar" type="button" onclick="prueba()">Encriptar</button>
+        <button class="boton" id= "desencriptar" type="button">Desencriptar</button>
     </section>
 
     <section class="seccion-copiar">
-        <img src="assets/Muñeco.png" alt="Muñeco buscando contenido">
-        <div class="mensaje-copiar">
+        <label for="output-copiar"></label>
+        <textarea id="output-copiar" readonly></textarea>
+        <button class="boton" id="boton-copiar" type="button">
+            <span class="material-symbols-outlined">content_copy</span>
+        </button>
+        <img id="imagen-copiar" src="assets/Muñeco.png" alt="Muñeco buscando contenido">
+        <div id="mensaje-copiar">
             <h1>Ningún mensaje fue encontrado</h1>
             <p>Ingresa el texto que desees encriptar o desencriptar</p>
         </div>
     </section>
+
 </body>
+
 </html>
