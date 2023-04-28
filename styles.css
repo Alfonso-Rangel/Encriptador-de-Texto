@@ -12,7 +12,6 @@ body {
 
 #linkedin-logo {
     position: relative;
-    margin-top: 2%;
     left: 90%;
     height: 4.69%;
     width: 3.33%;
@@ -20,7 +19,6 @@ body {
 
 #github-logo {
     position: relative;
-    margin-top: 2%;
     left: 80%;
     height: 4.69%;
     width: 3.33%;
@@ -241,12 +239,10 @@ body {
     }
 
     #linkedin-logo {
-        margin-top: 2%;
         left: 80%;
     }
 
     #github-logo {
-        margin-top: 2%;
         left: 63%;
     }
 
@@ -328,6 +324,12 @@ body {
         justify-content: center;
         align-items: center;
     }
+    #mensaje-copiar h1 {
+        font-size: 1rem;
+    }
+    #mensaje-copiar p {
+        font-size: 0.8rem;
+    }
 }
 
 @media screen and (width <= 375px) {
@@ -338,12 +340,10 @@ body {
     }
 
     #linkedin-logo {
-        margin-top: 2%;
         left: 67%;
     }
 
     #github-logo {
-        margin-top: 2%;
         left: 35%;
     }
 
@@ -413,12 +413,12 @@ body {
     #boton-copiar {
         height: 20%;
     }
-     #mensaje-copiar {
-         top: 10%;
-         left: 5%;
-         height: 80%;
-         width: 90%;
-     }
+    #mensaje-copiar {
+        top: 10%;
+        left: 5%;
+        height: 80%;
+        width: 90%;
+    }
 
     .seccion-copiar img {
         display: none;
