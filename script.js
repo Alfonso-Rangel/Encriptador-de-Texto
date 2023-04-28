@@ -1,10 +1,39 @@
-let input;
-function prueba() {
-    input = document.getElementById('texto').value;
-    const textarea = document.getElementById('output-copiar');
-    const miVariable = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-    textarea.value = miVariable;
-    ocultarElementos();
+function encriptar() {
+    if(document.getElementById('texto').value === "") {
+        const divAnimado = document.getElementById("mensaje-copiar");
+        divAnimado.classList.add("shake-horizontal");
+        setTimeout(function () {
+            divAnimado.classList.remove("shake-horizontal");
+        }, 800);
+    }
+    else {
+        let input = document.getElementById('texto').value;
+        input = input.toLowerCase();
+        let textarea = document.getElementById('output-copiar');
+        textarea.value = input.replaceAll(/[eé]/g, 'enter')
+             .replaceAll(/[ií]/g, 'imes')
+             .replaceAll(/[aá]/g, 'ai')
+             .replaceAll(/[oó]/g, 'ober')
+             .replaceAll(/[uú]/g, 'ufat');
+        ocultarElementos();
+    }
+}
+
+function desencriptar () {
+    if(document.getElementById('texto').value === "") {
+        const divAnimado = document.getElementById("mensaje-copiar");
+        divAnimado.classList.toggle("shake-horizontal");
+    }
+    else {
+        let input = document.getElementById('texto').value;
+        let textarea = document.getElementById('output-copiar');
+        textarea.value = input.replaceAll('enter', 'e')
+            .replaceAll('imes', 'i')
+            .replaceAll('ai', 'a')
+            .replaceAll('ober', 'o')
+            .replaceAll('ufat', 'u');
+        ocultarElementos();
+    }
 }
 
 function ocultarElementos() {
@@ -14,5 +43,30 @@ function ocultarElementos() {
     document.getElementById("boton-copiar").style.display = "inline";
 }
 
-
-
+function copiarTexto() {
+    const copiar = document.getElementById("output-copiar").value;
+    const botonCopiar = document.getElementById("boton-copiar");
+    const simbolo = document.getElementById("simbolo-copiar");
+    navigator.clipboard.writeText(copiar) .then(
+        () => {
+            botonCopiar.style.backgroundColor = '#50C878';
+            botonCopiar.style.color = '#0A3871';
+            simbolo.textContent = "done";
+            setTimeout(function () {
+                botonCopiar.style.backgroundColor = '#D8DFE8';
+                botonCopiar.style.color = '#0A3871';
+                simbolo.textContent = "content_copy";
+            }, 400);
+        },
+        () => {
+            botonCopiar.style.backgroundColor = '#CC2630';
+            botonCopiar.style.color = '#0A3871';
+            simbolo.textContent = "close";
+            setTimeout(function () {
+                botonCopiar.style.backgroundColor = '#D8DFE8';
+                botonCopiar.style.color = '#0A3871';
+                simbolo.textContent = "content_copy";
+            }, 400);
+        }
+    );
+}

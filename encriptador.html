@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -13,22 +13,26 @@
 
 <body>
     <script src="script.js"></script>
-    <img class="logo" src="assets/Logo.jpg" alt="Logo de Alura">
+    <img id="alura-logo" src="assets/Logo.jpg" alt="Logo de Alura">
+    <a id="linkedin-logo" href='https://www.linkedin.com/in/alfonsorangel'><img src="assets/linkedin.png" alt="Logo de Linkedin"></a>
+    <a id="github-logo" href='https://github.com/Alfonso-Rangel'><img src="assets/github.png" alt="Logo de Git-Hub"></a>
+
+
     <section class="seccion-texto">
         <textarea class="texto-area" placeholder="Ingrese el texto" name="texto" id='texto' required></textarea>
         <label for="texto" class="texto-label">Ingrese el texto aquí</label>
     </section>
-    <p id="advertencia">&#x2755Solo letras minúsculas y sin acentos</p>
+    <p id="advertencia">&#x2755No se tomarán encuenta mayúsculas ni acentos</p>
     <section class="seccion-botones">
-        <button class="boton" id= "encriptar" type="button" onclick="prueba()">Encriptar</button>
-        <button class="boton" id= "desencriptar" type="button">Desencriptar</button>
+        <button class="boton" id= "encriptar" type="button" onclick="encriptar()">Encriptar</button>
+        <button class="boton" id= "desencriptar" type="button" onclick="desencriptar()">Desencriptar</button>
     </section>
 
     <section class="seccion-copiar">
         <label for="output-copiar"></label>
         <textarea id="output-copiar" readonly></textarea>
-        <button class="boton" id="boton-copiar" type="button">
-            <span class="material-symbols-outlined">content_copy</span>
+        <button class="boton" id="boton-copiar" type="button" onclick="copiarTexto()">
+            <span id="simbolo-copiar" class="material-symbols-outlined">content_copy</span>
         </button>
         <img id="imagen-copiar" src="assets/Muñeco.png" alt="Muñeco buscando contenido">
         <div id="mensaje-copiar">
