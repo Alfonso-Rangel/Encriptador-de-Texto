@@ -22,7 +22,10 @@ function encriptar() {
 function desencriptar () {
     if(document.getElementById('texto').value === "") {
         const divAnimado = document.getElementById("mensaje-copiar");
-        divAnimado.classList.toggle("shake-horizontal");
+        divAnimado.classList.add("shake-horizontal");
+        setTimeout(function () {
+            divAnimado.classList.remove("shake-horizontal");
+        }, 800);
     }
     else {
         let input = document.getElementById('texto').value;
